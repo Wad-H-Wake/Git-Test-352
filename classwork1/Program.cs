@@ -11,16 +11,18 @@ namespace classwork1
         static void Main(string[] args)
         {
             Console.WriteLine("hello world!");
-            Console.ReadLine();
+            Console.WriteLine("What number range?(smaller number first)");
+            int lower = Convert.ToInt32(Console.ReadLine());
+            int upper = Convert.ToInt32(Console.ReadLine());
             Random rand = new Random();
-            int r = rand.Next(1, 100);
+            int r = rand.Next(lower, upper);
             //Console.WriteLine(r);
             Console.WriteLine();
             int guess = 0;
             int guess_amt = 0;
             while (guess != r)
             {
-                Console.WriteLine("What's my number?(between 1 and 100)");
+                Console.WriteLine("What's my number?(between "+ lower + " and " + upper + ")");
                 guess = Convert.ToInt32(Console.ReadLine());
 
                 if (guess == r)
